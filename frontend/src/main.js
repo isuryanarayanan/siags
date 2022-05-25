@@ -1,4 +1,17 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
 
-createApp(App).mount('#app')
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Toaster from "@meforma/vue-toaster";
+
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+
+const app = createApp(App);
+
+app.use(router)
+app.use(store)
+app.use(Toaster)
+
+app.mount('#app')

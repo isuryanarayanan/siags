@@ -45,12 +45,28 @@ INSTALLED_APPS = [
 
     # My apps
     'accounts.apps.AccountsConfig',
-    'course.apps.CourseConfig',
     # 'assignments.apps.AssignmentsConfig',
     'quizzes.apps.QuizzesConfig',
+    'academy.apps.AcademyConfig',
+    'chatbot.apps.ChatbotConfig',
+    'simple_chatbot',
 ]
 
+SIMPLE_CHATBOT = {
+    'responses': (
+        ("chatbot.responses.GreetingResponse", "Greeting"),
+        ("chatbot.responses.GoodbyeResponse", "Goodbye"),
+    ),
+}
+
 AUTH_USER_MODEL = 'accounts.User'
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "http://127.0.0.1:8081",
+    "http://192.168.225.215:8080",
+    "http://192.168.225.190:8080"
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

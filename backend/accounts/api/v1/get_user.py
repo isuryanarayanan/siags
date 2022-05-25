@@ -23,7 +23,8 @@ class GetUserEngine():
             self.user = {
                 "_ID": params.user.id,
                 "_USERNAME": params.user.username,
-                "_EMAIL": params.user.email
+                "_EMAIL": params.user.email,
+                "_MODE": params.user.mode
             }
             self.response = self.user
             self.response_code = 200

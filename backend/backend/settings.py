@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
     # My apps
     'accounts.apps.AccountsConfig',
-    # 'assignments.apps.AssignmentsConfig',
+    'assignments.apps.AssignmentsConfig',
     'quizzes.apps.QuizzesConfig',
     'academy.apps.AcademyConfig',
     'chatbot.apps.ChatbotConfig',

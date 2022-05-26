@@ -1,10 +1,15 @@
 export default {
     namespaced: true,
     state: {
+        messages: []
     },
     getters: {
+        get_messages: state => state.messages
     },
     mutations: {
+        add_message(state, message) {
+            state.messages.push(message);
+        }
     },
     actions: {
         TALK_TO_BOT: function ({ rootGetters, commit }, PAYLOAD) {
@@ -21,7 +26,7 @@ export default {
                 xhr.onerror = () => {
                     reject(xhr);
                 };
-                xhr.send(JSON.stringify({ message: PAYLOAD }));
+                xhr.send(JSON.stringify(PAYLOAD));
             });
             return promise;
         }

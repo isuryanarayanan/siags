@@ -4,7 +4,6 @@ import chatbot from "./modules/chatbot/index.js";
 import course from "./modules/course/index.js";
 import assignment from "./modules/assignment/index.js";
 
-
 export default new Vuex.Store({
   state: {
     endpoints: {
@@ -22,8 +21,12 @@ export default new Vuex.Store({
       CHATBOT: "chatbot/simple_chatbot/",
       /* course module api */
       GET_COURSE_PLAN: "academy/api/v1/get_course_plan/",
+      CREATE_COURSE_PLAN: "academy/api/v1/create_course_plan/",
+      CREATE_SEMESTER: "academy/api/v1/create_semester/",
       SEND_MESSAGE: "academy/api/v1/send_message/",
       GET_MESSAGES: "academy/api/v1/get_messages/",
+      GET_BATCHES: "academy/api/v1/get_batch/",
+      GET_COURSES: "academy/api/v1/get_courses/",
       /* assignments api */
       GET_ASSIGNMENTS: "assignments/api/v1/get_assignments/",
       SUBMIT_ASSIGNMENT: "assignments/api/v1/submit_assignment/",

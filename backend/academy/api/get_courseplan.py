@@ -26,9 +26,22 @@ class GetCoursePlanEngine():
         # Loading defaults
         self.request = params
         try:
-            user = params.user
 
-            course_plan = plan.objects.filter(student=user)
+            user = params.user
+            # if user mode is 1
+            if user.mode == 1:
+                course_plan = plan.objects.filter(student=user)
+            if user.mode == 2:
+                course_plan = plan.objects.filter(
+                    teacher=user, student=params.data['student'])
+
+            # if course_plan is empty, then send 404 response
+            if not course_plan:
+                self.response_code = 404
+                self.response = {
+                    "message": "No course plan found for this user."
+                }
+                return
 
             # from course_plan semesters get all corresponding semester objects
             semesters = []
@@ -98,6 +111,7 @@ class GetCoursePlan(APIView):
 
     def post(self, request):
         # Create the engine.
+        # get keyword from request
         Engine = GetCoursePlanEngine(request)
         # Respond.
         return Response(Engine.response, Engine.response_code)

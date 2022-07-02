@@ -56,6 +56,9 @@ SIMPLE_CHATBOT = {
     'responses': (
         ("chatbot.responses.GreetingResponse", "Greeting"),
         ("chatbot.responses.GoodbyeResponse", "Goodbye"),
+        ("chatbot.responses.PassingGrade", "PassingGrade"),
+        ("chatbot.responses.Ielts", "Ielts"),
+        ("chatbot.responses.EnglishTest", "EnglishTest"),
     ),
 }
 

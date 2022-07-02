@@ -27,7 +27,10 @@ class GetAssignmentsEngine():
             user = params.user
 
             # in all assignments check if user is in assigned_to field
-            assignments = Assignment.objects.filter(assigned_to=user)
+            if user.mode == 1:
+                assignments = Assignment.objects.filter(assigned_to=user)
+            else:
+                assignments = Assignment.objects.filter(owner=user)
 
             self.response = {
                 "assignments": [

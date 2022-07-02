@@ -23,4 +23,4 @@ class plan(models.Model):
     semesters = models.ManyToManyField(
         'semester', related_name='plan_semester')
 
-    messages = models.ManyToManyField(planMessage)
+    messages = models.ManyToManyField(planMessage, blank=True)
